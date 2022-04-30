@@ -1,3 +1,4 @@
+//Traigo los elementos del HTML
 const cards = document.getElementById('cards')
 const items = document.getElementById('items')
 const footer = document.getElementById('footer')
@@ -14,12 +15,50 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarCarrito();
     }
 })
-//inicializacion del canvas
+//Inicializacion del canvas
 var offcanvasRight = document.getElementById('offcanvasRight')
 var bsOffcanvas = new bootstrap.Offcanvas(offcanvasRight)
-//evento de agregar al carrito
+//Evento de agregar al carrito
 cards.addEventListener('click', e => {
     agregarAlCarrito(e)
+
+})
+
+    //Escucha el evento de aumentar y disminuir
+items.addEventListener('click', e => {
+    btnAccion(e)
+    
+});
+    //Traigo informacion del data.json
+const fetchData = async () => {
+    try {
+        const res = await fetch('/data.json')
+        const data = await res.json()
+        generarCards(data)
+    } catch (error) {
+    }
+}
+    //Cards
+const generarCards = data => {
+    data.forEach(producto => {
+        templateCard.querySelector('h5').textContent = producto.titulo
+        templateCard.querySelector('p').textContent = producto.precio
+        templateCard.querySelector('h6').textContent = producto.descripcion
+        templateCard.querySelector('img').setAttribute("src", producto.imagen)
+        templateCard.querySelector('.btn-dark').dataset.id = producto.id
+        //Clonamos la card
+        const clone = templateCard.cloneNode(true)
+        //Se guarda en el fragmento
+        fragment.appendChild(clone)
+    })
+    cards.appendChild(fragment)
+}
+    //Agregar al carrito
+const agregarAlCarrito = e => {
+    //Pregunta si tiene la clase
+    if (e.target.classList.contains('btn-dark')) {
+        setCarrito(e.target.parentElement)
+    //Sweet Alert
 const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
     confirmButton: 'btn btn-success',
@@ -44,43 +83,9 @@ const swalWithBootstrapButtons = Swal.mixin({
     } else if (
     result.dismiss === Swal.DismissReason.cancel) {}
 })
-})
+    }
 
-    //escucha el evento de aumentar y disminuir
-items.addEventListener('click', e => {
-    btnAccion(e)
-});
-    //traigo informacion del data.json
-const fetchData = async () => {
-    try {
-        const res = await fetch('/data.json')
-        const data = await res.json()
-        generarCards(data)
-    } catch (error) {
-    }
-}
-    //cards
-const generarCards = data => {
-    data.forEach(producto => {
-        templateCard.querySelector('h5').textContent = producto.titulo
-        templateCard.querySelector('p').textContent = producto.precio
-        templateCard.querySelector('h6').textContent = producto.descripcion
-        templateCard.querySelector('img').setAttribute("src", producto.imagen)
-        templateCard.querySelector('.btn-dark').dataset.id = producto.id
-        //clonamos la card
-        const clone = templateCard.cloneNode(true)
-        //se guarda en el fragmento
-        fragment.appendChild(clone)
-    })
-    cards.appendChild(fragment)
-}
-    //agregar al carrito
-const agregarAlCarrito = e => {
-    //pregunta si tiene la clase
-    if (e.target.classList.contains('btn-dark')) {
-        setCarrito(e.target.parentElement)
-    }
-    //detiene los eventos en cards
+    //Detiene los eventos en cards
     e.stopPropagation()
 }
 
@@ -165,8 +170,20 @@ const mostrarFooter = () => {
                 mostrarCarrito()
             });
     })
-}
 
+   //Finalizar compra
+    const btnFinalizar = document.getElementById('finalizarCompra')
+    btnFinalizar.addEventListener('click', (e) => {
+        swal.fire({
+            title: "Finalizar compra",
+            text: "Su compra se realizó con éxito, Gracias por elegirnos!",
+            icon: "success",
+            buttons: true,
+            background: "#ffedcc",
+            dangerMode: true,
+            backdrop:true
+        })
+        })
 const btnAccion = e => {
     //boton para  aumentar
     if (e.target.classList.contains('btn-info')) {
@@ -187,4 +204,4 @@ const btnAccion = e => {
     }
 
     e.stopPropagation()
-}
+} }
