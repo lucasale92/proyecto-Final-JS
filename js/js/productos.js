@@ -45,7 +45,7 @@ const generarCards = data => {
         templateCard.querySelector('p').textContent = producto.precio
         templateCard.querySelector('h6').textContent = producto.descripcion
         templateCard.querySelector('img').setAttribute("src", producto.imagen)
-        templateCard.querySelector('.btn-dark').dataset.id = producto.id
+        templateCard.querySelector('.btn-success').dataset.id = producto.id
         //Clonamos la card
         const clone = templateCard.cloneNode(true)
         //Se guarda en el fragmento
@@ -64,7 +64,7 @@ const swalWithBootstrapButtons = Swal.mixin({
     confirmButton: 'btn btn-success',
     cancelButton: 'btn btn-danger'
     },
-    buttonsStyling: false
+    buttonsStyling: true
 })
     swalWithBootstrapButtons.fire({
     title: "Felicidades",
@@ -91,7 +91,7 @@ const swalWithBootstrapButtons = Swal.mixin({
 
 const setCarrito = objeto => {
     const producto = {
-        id: objeto.querySelector('.btn-dark').dataset.id,
+        id: objeto.querySelector('.btn-success').dataset.id,
         titulo: objeto.querySelector('h5').textContent,
         precio: objeto.querySelector('p').textContent,
         cantidad: 1
