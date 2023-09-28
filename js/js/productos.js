@@ -184,7 +184,8 @@ const mostrarFooter = () => {
             backdrop:true
         })
         })
-const btnAccion = e => {
+    }
+    const btnAccion = e => {
     //boton para  aumentar
     if (e.target.classList.contains('btn-info')) {
         const producto = carrito[e.target.dataset.id]
@@ -202,6 +203,5 @@ const btnAccion = e => {
         }
         mostrarCarrito()
     }
-
     e.stopPropagation()
-} }
+} 
