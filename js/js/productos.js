@@ -68,7 +68,7 @@ const swalWithBootstrapButtons = Swal.mixin({
 })
     swalWithBootstrapButtons.fire({
     title: "Felicidades",
-    text: 'Agregaste al carrito un producto al carrito',
+    text: 'Agregaste un producto al carrito',
     icon: "success",
     background: "#ffedcc",
     dangerMode: true,
