@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-Bienvenido a la historia de **Pastas Lau**, una empresa familiar apasionada por la producción de pastas caseras y artesanales en **Río Grande, Tierra del Fuego, Argentina**. Este proyecto web, desarrollado como parte del curso de **Desarrollo Web de Coderhouse**, tiene como objetivo compartir la emocionante historia detrás de **Pastas Lau** y presentar sus productos de calidad.
+Bienvenido a la historia de **Pastas Lau**, una empresa familiar apasionada por la producción de pastas caseras y artesanales en **Río Grande, Tierra del Fuego, Argentina**. Este proyecto web, desarrollado como parte del curso de **JavaScript de Coderhouse**, tiene como objetivo compartir la emocionante historia detrás de **Pastas Lau** y presentar sus productos de calidad.
 
 ## Tecnologías Utilizadas 🛠️
 
@@ -21,4 +21,3 @@ El proyecto "Historia de Pastas Lau" se construyó utilizando una variedad de te
 La página web es accesible desde cualquier navegador y es completamente receptiva, adaptándose a dispositivos de diferentes tamaños. Los usuarios pueden explorar las diferentes secciones utilizando el menú de navegación en la parte superior de la página.
 
 ¡Gracias por visitar "Historia de Pastas Lau"! Esperamos que disfrutes explorando nuestra historia y productos caseros. Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto con nosotros a través de la información proporcionada en la página de contacto. ¡Buen provecho! 🍽️
-
