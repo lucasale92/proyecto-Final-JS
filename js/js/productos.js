@@ -1,12 +1,14 @@
 //Traigo los elementos del HTML
 const cards = document.getElementById('cards')
 const items = document.getElementById('items')
-const footer = document.getElementById('footer')
+const footer = document.getElementById('carritoFooter')
+const carritoBadge = document.getElementById('carrito')
 const templateCard = document.getElementById('template-card').content
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
 let carrito = {}
+let productosData = []
 //El evento DOMContentLoaded se activa cuando el documento HTML inicial se ha cargado y analizado por completo
 document.addEventListener('DOMContentLoaded', () => {
     fetchData()
@@ -32,8 +34,9 @@ items.addEventListener('click', e => {
     //Traigo informacion del data.json
 const fetchData = async () => {
     try {
-        const res = await fetch('/data.json')
+        const res = await fetch('../data.json')
         const data = await res.json()
+        productosData = data
         generarCards(data)
     } catch (error) {
     }
@@ -57,32 +60,34 @@ const generarCards = data => {
 const agregarAlCarrito = e => {
     //Pregunta si tiene la clase
     if (e.target.classList.contains('btn-dark')) {
-        setCarrito(e.target.parentElement)
-    //Sweet Alert
-const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-    confirmButton: 'btn btn-success',
-    cancelButton: 'btn btn-danger'
-    },
-    buttonsStyling: true
-})
-    swalWithBootstrapButtons.fire({
-    title: "Felicidades",
-    text: 'Agregaste un producto al carrito',
-    icon: "success",
-    background: "#ffedcc",
-    dangerMode: true,
-    backdrop:true,
-    showCancelButton: true,
-    confirmButtonText: 'Ver mi carrito',
-    cancelButtonText: 'Seguir comprando',
-    reverseButtons: true
-}).then((result) => {
-    if (result.isConfirmed) {
-        bsOffcanvas.show()
-    } else if (
-    result.dismiss === Swal.DismissReason.cancel) {}
-})
+        const agregado = setCarrito(e.target.parentElement)
+        //Sweet Alert
+        if (agregado) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: true
+            })
+            swalWithBootstrapButtons.fire({
+                title: "Felicidades",
+                text: 'Agregaste un producto al carrito',
+                icon: "success",
+                background: "#ffedcc",
+                dangerMode: true,
+                backdrop: true,
+                showCancelButton: true,
+                confirmButtonText: 'Ver mi carrito',
+                cancelButtonText: 'Seguir comprando',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    bsOffcanvas.show()
+                } else if (
+                    result.dismiss === Swal.DismissReason.cancel) { }
+            })
+        }
     }
 
     //Detiene los eventos en cards
@@ -90,20 +95,30 @@ const swalWithBootstrapButtons = Swal.mixin({
 }
 
 const setCarrito = objeto => {
+    const id = objeto.querySelector('.btn-dark').dataset.id
+    const cantidadActual = carrito.hasOwnProperty(id) ? carrito[id].cantidad : 0
+    const stockDisponible = productosData.find(p => p.id === Number(id))?.stock ?? Infinity
+    if (cantidadActual >= stockDisponible) {
+        swal.fire({
+            title: "Sin stock",
+            text: "No queda más stock disponible de este producto.",
+            icon: "warning",
+            background: "#ffedcc",
+            dangerMode: true,
+            backdrop: true
+        })
+        return false
+    }
     const producto = {
-        id: objeto.querySelector('.btn-dark').dataset.id,
+        id,
         titulo: objeto.querySelector('h5').textContent,
         precio: objeto.querySelector('p').textContent,
-        cantidad: 1
-    }
-    //pregunta si existe la propiedad con la key
-    if (carrito.hasOwnProperty(producto.id)) {
-        producto.cantidad = carrito[producto.id].cantidad + 1
+        cantidad: cantidadActual + 1
     }
     //copia con spread operator
     carrito[producto.id] = { ...producto }
     mostrarCarrito()
-
+    return true
 }
 
 const mostrarCarrito = () => {
@@ -123,7 +138,12 @@ const mostrarCarrito = () => {
     })
     items.appendChild(fragment)
     mostrarFooter()
+    actualizarBadge()
     localStorage.setItem('carrito', JSON.stringify(carrito))
+}
+const actualizarBadge = () => {
+    const totalItems = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
+    carritoBadge.textContent = totalItems > 0 ? totalItems : ''
 }
 const mostrarFooter = () => {
     footer.innerHTML = ''
@@ -189,10 +209,22 @@ const mostrarFooter = () => {
     //boton para  aumentar
     if (e.target.classList.contains('btn-info')) {
         const producto = carrito[e.target.dataset.id]
-        producto.cantidad++
-        //copia con spread operator
-        carrito[e.target.dataset.id] = { ...producto }
-        mostrarCarrito()
+        const stockDisponible = productosData.find(p => p.id === Number(e.target.dataset.id))?.stock ?? Infinity
+        if (producto.cantidad >= stockDisponible) {
+            swal.fire({
+                title: "Sin stock",
+                text: "No queda más stock disponible de este producto.",
+                icon: "warning",
+                background: "#ffedcc",
+                dangerMode: true,
+                backdrop: true
+            })
+        } else {
+            producto.cantidad++
+            //copia con spread operator
+            carrito[e.target.dataset.id] = { ...producto }
+            mostrarCarrito()
+        }
     }
     //boton para disminuir
     if (e.target.classList.contains('btn-danger')) {

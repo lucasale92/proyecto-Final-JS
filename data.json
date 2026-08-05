@@ -3,7 +3,7 @@
   "precio": 1100,
   "id": 1,
   "titulo": "Sorrentinos de Centolla",
-  "imagen": "/img/portfolio/sorrenfoco.png",
+  "imagen": "../img/portfolio/sorrenfoco.png",
   "stock":5,
   "descripcion":"Relleno de centolla fueguina precocida, cebolla de verdeo, queso reggeanito, queso crema y pimienta negra."
   },
@@ -11,7 +11,7 @@
       "precio":800,
       "id": 2,
       "titulo": "Sorrentinos de Pollo",
-      "imagen": "/img/portfolio/relleno.png",
+      "imagen": "../img/portfolio/relleno.png",
       "stock":6,
       "descripcion":"Relleno de pollo fresco, cebolla rehogada, queso, crema de leche, sal y pimienta."
       },
@@ -19,7 +19,7 @@
       "precio": 700,
       "id": 3,
       "titulo": "Ravioles de Verdura",
-      "imagen": "/img/portfolio/rellenoraviol.png",
+      "imagen": "../img/portfolio/rellenoraviol.png",
       "stock":6,
       "descripcion":"Relleno de espinaca, cebolla rehogada, queso crema, queso rallado, ricota, pimienta y sal."
       },
@@ -27,7 +27,7 @@
       "precio": 750,
       "id": 4,
       "titulo": "Ravioles de Jamon y Queso",
-      "imagen": "/img/portfolio/ravioles.png",
+      "imagen": "../img/portfolio/ravioles.png",
       "stock":11,
       "descripcion":"Jamón, queso, cebolla de verdeo, pimienta y ricota a eleccion."
       },
@@ -35,7 +35,7 @@
       "precio": 1300,
       "id": 5,
       "titulo": "Pizza de Centolla",
-      "imagen": "/img/portfolio/pizzaindex.png",
+      "imagen": "../img/portfolio/pizzaindex.png",
       "stock":7,
       "descripcion":"Centolla fueguina precocida, cebolla de verdeo, queso y queso azul."
       },
@@ -43,7 +43,7 @@
       "precio": 1500,
       "id": 6,
       "titulo": "Sorrentinos de salmon",
-      "imagen": "/img/portfolio/sorrentinoindex.png",
+      "imagen": "../img/portfolio/sorrentinoindex.png",
       "stock":2,
       "descripcion":"Salmon fueguino cocido al horno, cebolla de verdeo, sal, pimienta."
       }
