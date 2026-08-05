@@ -2,16 +2,16 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #777;
+  color: #6e6259;
 }
 
 a {
   text-decoration: none;
-  color: #43aea0;
+  color: #8a5a2f;
 }
 
 a:hover {
-  color: #00d3b8;
+  color: #c67c3e;
   text-decoration: none;
 }
 
@@ -23,7 +23,7 @@ h5,
 h6,
 .font-primary {
   font-family: "Lato", sans-serif;
-  color: #c60000;
+  color: #6b4226;
 }
 
 /* Secciones*/
@@ -33,13 +33,13 @@ section {
 }
 
 .section-bg {
-  background-color: #f2f9f8;
+  background-color: #faf1e0;
 }
 
 .section-title {
   text-align: center;
   padding-bottom: 30px;
-  color: #c60000;
+  color: #6b4226;
 }
 .section-title:hover {
   transform: scale(1.1);
@@ -49,7 +49,7 @@ section {
   font-weight: 300;
   margin-bottom: 20px;
   padding-bottom: 0;
-  color: #c60000;
+  color: #6b4226;
 }
 
 .section-title p {
@@ -94,11 +94,11 @@ section {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  background: #805a3b;
+  background: #6b4226;
 }
 
 #header.header-scrolled {
-  background: #fd974f;
+  background: #c67c3e;
   height: 100px;
 }
 
@@ -149,7 +149,7 @@ section {
   padding: 10px 0 10px 30px;
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
-  color: #fef2e4;
+  color: #f8e8c8;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -158,7 +158,7 @@ section {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #c60000;
+  color: #ffffff;
 }
 
 /**
@@ -190,7 +190,7 @@ section {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(7, 56, 57, 0.9);
+  background: rgba(43, 26, 15, 0.92);
   transition: 0.3s;
 }
 
@@ -216,7 +216,7 @@ section {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #c60000;
+  color: #6b4226;
 }
 
 
@@ -243,7 +243,7 @@ section {
   text-transform: none;
   font-size: 14px;
   font-weight: 500;
-  color: #25564f;
+  color: #805a3b;
 }
 
 .navbar .dropdown ul a i {
@@ -253,7 +253,7 @@ section {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #c60000;
+  color: #6b4226;
 }
 
 .navbar .dropdown .dropdown ul {
@@ -308,7 +308,7 @@ section {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(7, 56, 57, 0.9);
+  background: rgba(43, 26, 15, 0.92);
   transition: 0.3s;
 }
 
@@ -335,13 +335,13 @@ section {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #c60000;
+  color: #6b4226;
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #fef2e4;
+  color: #c67c3e;
 }
 
 .navbar-mobile .dropdown ul {
@@ -352,7 +352,7 @@ section {
   z-index: 99;
   opacity: 1;
   visibility: visible;
-  background: #fef2e4;
+  background: #f8e8c8;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
 
@@ -371,7 +371,7 @@ section {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-  color: #70b9b0;
+  color: #c67c3e;
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
@@ -415,7 +415,7 @@ section {
   font-weight: 300;
   line-height: 56px;
   color: #805a3b;
-  background-color: #fef2e4;
+  background-color: #f8e8c8;
 }
 
 #presentacion h2 {
@@ -423,7 +423,7 @@ section {
   margin-bottom: 50px;
   font-size: 20px;
   font-weight: 300;
-  background-color: #fef2e4;
+  background-color: #f8e8c8;
 }
 
 @media (min-width: 1024px) {
@@ -465,7 +465,7 @@ section {
 .historia h3 {
   font-weight: 400;
   font-size: 26px;
-  color: #c60000;
+  color: #6b4226;
 }
 
 .historia ul {
@@ -480,7 +480,7 @@ section {
 .historia ul i {
   font-size: 22px;
   padding-right: 4px;
-  color: #c60000;
+  color: #6b4226;
   line-height: 0;
 }
 
@@ -490,7 +490,7 @@ section {
   text-align: center;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
   padding: 30px 20px;
-  background: #fef2e4;
+  background: #f8e8c8;
 }
 
 .equipo .miembro img {
@@ -523,7 +523,7 @@ section {
   padding-top: 10px;
   font-size: 14px;
   font-style: italic;
-  color: #aaaaaa;
+  color: #9c8f81;
 }
 
 .equipo .miembro .social {
@@ -536,7 +536,7 @@ section {
 }
 
 .equipo .miembro .social a:hover {
-  color: #c60000;
+  color: #6b4226;
 }
 
 .equipo .miembro .social i {
@@ -559,12 +559,12 @@ section {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  background: #70b9b0;
+  background: #c67c3e;
   color: #fff;
 }
 
 .portfolio .portfolio-wrap {
-  background: #073839;
+  background: #2e1c10;
   overflow: hidden;
   min-height: 200px;
   position: relative;
@@ -587,7 +587,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-info a i:hover {
-  color: #70b9b0;
+  color: #c67c3e;
 }
 
 .portfolio .portfolio-wrap:hover img {
@@ -615,7 +615,7 @@ section {
 .receta ul i {
   font-size: 22px;
   padding-right: 4px;
-  color: #c60000;
+  color: #6b4226;
   line-height: 0;
 }
 
@@ -639,7 +639,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   font-family: "Lato", sans-serif;
-  color: #888;
+  color: #7a6e63;
 }
 
 .contacto .social-links {
@@ -652,23 +652,23 @@ section {
   justify-content: center;
   font-size: 16px;
   background: #fff;
-  color: #c60000;
+  color: #6b4226;
   line-height: 0;
   margin-right: 4px;
   border-radius: 50%;
   width: 36px;
   height: 36px;
   transition: 0.3s;
-  border: 1px solid #c60000;
+  border: 1px solid #6b4226;
 }
 
 .contacto .social-links a:hover {
-  background: #c60000;
-  color: #f2f9f8;
+  background: #6b4226;
+  color: #faf1e0;
 }
 
 .contacto .info {
-  color: #777;
+  color: #6e6259;
 }
 
 .contacto .info i {
@@ -721,7 +721,7 @@ section {
 #footer {
   background: #805a3b;
   padding: 30px 0;
-  color: #fef2e4;
+  color: #f8e8c8;
   font-size: 14px;
 }
 
@@ -745,12 +745,13 @@ section {
   filter: contrast(140%);
 }
 .cart{
-color: #ffedcc;
-background-color: #43aea0;
+color: #6b4226;
+background-color: #f8e8c8;
 
 }
 .cart:hover{
-  color: #c60000;
+  color: #ffffff;
+  background-color: #c67c3e;
 }
 .canvas{
   width: 550px;

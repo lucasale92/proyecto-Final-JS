@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <!--Responsive-->
@@ -41,7 +41,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <a href="/index.html"><img src="../img/logo.png" alt="logo" class="img-fluid hover-zoom"></a>
+        <a href="../index.html"><img src="../img/logo.png" alt="logo" class="img-fluid hover-zoom"></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -53,7 +53,6 @@
           <li><a class="nav-link scrollto" href="contactos.html">Contacto</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-        </a>
       </nav>
 
     </div>
@@ -172,8 +171,8 @@
                 <p>Suscribite para obtener recetas y
                   descuentos.</p>
                 <div class="social-links">
-                  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                  <a href="https://www.instagram.com/_pastaslau66/?hl=es" class="instagram"><i
+                  <a href="#" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/_pastaslau66/?hl=es" class="instagram" aria-label="Instagram"><i
                       class="bi bi-instagram"></i></a>
                 </div>
               </div>
@@ -202,15 +201,19 @@
             <div class="col-lg-5 col-md-12">
               <form action="" method="post" role="form">
                 <div class="form-group">
+                  <label for="name" class="visually-hidden">Nombre</label>
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
                 </div>
                 <div class="form-group mt-3">
+                  <label for="email" class="visually-hidden">Tu correo</label>
                   <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo" required>
                 </div>
                 <div class="form-group mt-3">
+                  <label for="subject" class="visually-hidden">Asunto</label>
                   <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
                 </div>
                 <div class="form-group mt-3">
+                  <label for="message" class="visually-hidden">Mensaje</label>
                   <textarea class="form-control" name="message" rows="5" placeholder="Escribi acá" required></textarea>
                 </div>
                 <div class="my-3">
