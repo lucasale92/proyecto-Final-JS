@@ -45,7 +45,8 @@ const fetchData = async () => {
 const generarCards = data => {
     data.forEach(producto => {
         templateCard.querySelector('h5').textContent = producto.titulo
-        templateCard.querySelector('p').textContent = producto.precio
+        templateCard.querySelector('p').textContent = `$ ${producto.precio}`
+        templateCard.querySelector('p').dataset.precio = producto.precio
         templateCard.querySelector('h6').textContent = producto.descripcion
         templateCard.querySelector('img').setAttribute("src", producto.imagen)
         templateCard.querySelector('.btn-dark').dataset.id = producto.id
@@ -112,7 +113,7 @@ const setCarrito = objeto => {
     const producto = {
         id,
         titulo: objeto.querySelector('h5').textContent,
-        precio: objeto.querySelector('p').textContent,
+        precio: Number(objeto.querySelector('p').dataset.precio),
         cantidad: cantidadActual + 1
     }
     //copia con spread operator
@@ -203,6 +204,8 @@ const mostrarFooter = () => {
             dangerMode: true,
             backdrop:true
         })
+        carrito = {}
+        mostrarCarrito()
         })
     }
     const btnAccion = e => {

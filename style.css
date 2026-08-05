@@ -737,12 +737,35 @@ section {
 }
 
 .card{
-  background-color: #d9d4d1;
+  background-color: #ffffff;
   border-color: #805a3b;
   border-width: 4px;
+  text-align: center;
 }
 .card-img-top:hover {
   filter: contrast(140%);
+}
+.card > div {
+  padding: 15px;
+}
+.card h6 {
+  color: #6e6259;
+  font-size: 14px;
+  font-weight: 400;
+}
+.card p {
+  color: #c67c3e;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.card .btn-dark {
+  background-color: #6b4226;
+  border-color: #6b4226;
+}
+.card .btn-dark:hover {
+  background-color: #c67c3e;
+  border-color: #c67c3e;
 }
 .cart{
 color: #6b4226;
